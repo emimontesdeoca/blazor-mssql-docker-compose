@@ -13,8 +13,6 @@ FROM mcr.microsoft.com/dotnet/sdk:9.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
 COPY ["Backoffice/Backoffice.csproj", "Backoffice/"]
-RUN dotnet dev-certs https
-RUN dotnet dev-certs https --trust
 RUN dotnet restore "./Backoffice/Backoffice.csproj"
 COPY . .
 WORKDIR "/src/Backoffice"
