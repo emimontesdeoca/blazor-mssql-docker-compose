@@ -1,7 +1,6 @@
 networks:
   demoblazorapp:
 
-
 services:
   backoffice:
     container_name: app-backoffice
