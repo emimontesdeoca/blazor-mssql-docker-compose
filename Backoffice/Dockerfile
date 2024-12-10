@@ -1,5 +1,9 @@
 # See https://aka.ms/customizecontainer to learn how to customize your debug container and how Visual Studio uses this Dockerfile to build your images for faster debugging.
 
+# Install dev-certs tool and create a trust certificate
+RUN dotnet dev-certs https
+RUN dotnet dev-certs https --trust
+
 # This stage is used when running from VS in fast mode (Default for Debug configuration)
 FROM mcr.microsoft.com/dotnet/aspnet:9.0 AS base
 USER $APP_UID
