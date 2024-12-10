@@ -9,12 +9,11 @@ services:
       dockerfile: Backoffice/Dockerfile
     environment:
       - ASPNETCORE_ENVIRONMENT=Production
-      - ASPNETCORE_HTTP_PORTS=8080
-      - ASPNETCORE_HTTPS_PORTS=8081
-      # - DB_HOST=demoappdb
+      - ASPNETCORE_KESTREL__ENDPOINTS__HTTP__URL=http://+:8080
+      - Kestrel__EndPoints__Http__Url=http://+:8080
+      - DB_HOST=demoappdb
       - DB_NAME=DemoBlazorApp
       - DB_SA_PASSWORD=password@12345#
-      - Kestrel__EndPoints__Http__Url=http://+:8080
     ports:
       - "3000:8080"
       # - "8081:8081"
