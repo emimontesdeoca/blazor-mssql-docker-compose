@@ -1,6 +1,7 @@
 networks:
   demoblazorapp:
 
+
 services:
   backoffice:
     container_name: app-backoffice
@@ -15,7 +16,7 @@ services:
     ports:
       - 4001:8080
     networks:
-      - demoblazorapp 
+      - demoblazorapp
 
   demoappdb:
     container_name: app-database

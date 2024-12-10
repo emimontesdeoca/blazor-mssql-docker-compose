@@ -7,9 +7,10 @@ services:
       - DB_HOST=demoappdb
       - DB_NAME=DemoBlazorApp
       - DB_SA_PASSWORD=password@12345#
+      - Kestrel__EndPoints__Http__Url=https://+:8081
     ports:
-      - 8080
-      - 8081
+      - 4001:8080
+      - 4002:8081
     volumes:
       - ${APPDATA}/Microsoft/UserSecrets:/home/app/.microsoft/usersecrets:ro
       - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
